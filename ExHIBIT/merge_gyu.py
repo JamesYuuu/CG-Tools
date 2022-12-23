@@ -1,7 +1,4 @@
-import os
-import struct
-import sys
-from tqdm import tqdm
+import os,struct,sys
 
 def decode():
     print("Start decoding...")
@@ -9,7 +6,7 @@ def decode():
 
 def gyu_to_bmp():
     print("Start transforming gyu to bmp...")
-    for files in tqdm(os.listdir("./")):
+    for files in os.listdir("./"):
         if os.path.isdir(files):
             for file in os.listdir(files):
                 file=os.path.join(files,file)
@@ -19,7 +16,7 @@ def gyu_to_bmp():
 
 def delete_gyu():
     print("Start deleting original gyu...")
-    for files in tqdm(os.listdir("./")):
+    for files in os.listdir("./"):
         if os.path.isdir(files):
             for file in os.listdir(files):
                 file=os.path.join(files,file)
@@ -29,7 +26,7 @@ def delete_gyu():
 
 def merge():
     print("Start merging...")
-    for files in tqdm(os.listdir("./")):
+    for files in os.listdir("./"):
         if os.path.isdir(files):
             for file in os.listdir(files):
                 file=os.path.join(files,file)
@@ -64,7 +61,7 @@ def merge():
                     os.system("magick "+base_file+" -compose over "+file_name+" -geometry "+size+" -composite "+file_name)
 
 if __name__=='__main__':
-    if list(set(['-d','-g','-m','-del'])&set(sys.argv)):
+    if list(set(['-d','-g','-m','-del']) and set(sys.argv)):
         if '-d' in sys.argv:
             decode()
         if '-g' in sys.argv:
