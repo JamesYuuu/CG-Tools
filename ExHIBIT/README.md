@@ -12,7 +12,7 @@
 
 ## 用法
 
-需要安装python和 ImageMagick。
+需要安装 python 和 ImageMagick。
 
 将仓库中的gyu2bmp.exe，fixipgyu.exe，merge_gyu.py以及游戏目录 /rld/def.rld 放到游戏目录/res/g/ev文件夹下。
 
